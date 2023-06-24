@@ -9,24 +9,26 @@ import com.teachboost.pichanga.screens.authscreens.LoginScreen
 import com.teachboost.pichanga.screens.MainScreen
 import com.teachboost.pichanga.screens.StartScreen
 import com.teachboost.pichanga.screens.authscreens.RegisterScreen
+import com.teachboost.pichanga.screens.viewmodel.AuthViewModel
 
 @Composable
 fun AppNavHost(
+    viewModel: AuthViewModel,
     navController: NavHostController = rememberNavController(),
     startDestination: String = Routes.ScreenStart.route
 ) {
     NavHost(navController = navController, startDestination = startDestination){
         composable(Routes.ScreenLogin.route){
-            LoginScreen(navController)
+            LoginScreen(navController, viewModel)
         }
         composable(Routes.ScreenRegister.route){
-            RegisterScreen(navController)
+            RegisterScreen(navController, viewModel)
         }
         composable(Routes.ScreenMain.route){
-            MainScreen(navController)
+            MainScreen(navController, viewModel)
         }
         composable(Routes.ScreenStart.route){
-            StartScreen(navController)
+            StartScreen(navController, viewModel)
         }
     }
 
