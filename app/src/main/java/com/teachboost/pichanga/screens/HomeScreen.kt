@@ -38,7 +38,7 @@ fun HomeScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
-                onClick = { navController.navigate(BottomBarScreen.CreateEventSport.route) },
+                onClick = { },
                 modifier = Modifier
                     .width(200.dp)
                     .padding(8.dp),
@@ -55,7 +55,7 @@ fun HomeScreen(navController: NavHostController) {
                 }
             }
             Button(
-                onClick = { /* Acción cuando se hace clic en el botón 2 */ },
+                onClick = { navController.navigate(BottomBarScreen.CreateEventSport.route) },
                 modifier = Modifier
                     .width(200.dp)
                     .padding(8.dp),
